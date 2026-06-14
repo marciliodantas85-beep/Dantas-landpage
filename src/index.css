@@ -1,34 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
 
-:root {
-  --bg: #f1ede5;
-  --surface: rgba(255, 255, 255, 0.72);
-  --ink: #111827;
-  --muted: #5c6472;
-  --line: rgba(17, 24, 39, 0.1);
-  --accent: #c56a2b;
-  --accent-strong: #15314f;
-  --accent-soft: rgba(197, 106, 43, 0.14);
-  --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
-  --font-body: 'Manrope', 'Segoe UI', sans-serif;
-  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
-
-  font-family: var(--font-body);
-  line-height: 1.5;
-  font-weight: 400;
-  color: var(--ink);
-  background-color: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color-scheme: light;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@theme {
+  --font-heading: "Aptos Display", "Bahnschrift", "Segoe UI", sans-serif;
+  --font-sans: "Aptos", "Segoe UI", sans-serif;
 }
 
 html {
@@ -37,16 +11,13 @@ html {
 
 body {
   margin: 0;
-  min-width: 320px;
-  background: var(--bg);
-}
-
-body,
-button,
-input,
-textarea,
-select {
-  font-family: var(--font-body);
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  color: #292929;
+  background: #ffffff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -55,23 +26,55 @@ a {
 }
 
 button {
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul {
-  margin: 0;
+  font: inherit;
 }
 
 #root {
-  min-height: 100svh;
+  min-height: 100vh;
 }
 
-::selection {
-  background: var(--accent);
-  color: #fff;
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-7xl px-6 py-18 lg:px-10;
+  }
+
+  .section-header {
+    @apply max-w-3xl;
+  }
+
+  .section-title {
+    @apply mt-4 font-heading text-4xl font-semibold tracking-tight text-[#292929] md:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-4 text-base leading-8 text-[#666666];
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border border-[#8d1418]/20 bg-[#f4f1ed] px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-[#8d1418];
+  }
+
+  .button-primary {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-[#c69a3a] px-5 text-sm font-semibold text-[#202020] transition hover:bg-[#d8b45f];
+  }
+
+  .button-secondary {
+    @apply inline-flex h-12 items-center justify-center rounded-lg border border-white/20 bg-white/8 px-5 text-sm font-semibold text-white transition hover:bg-white/14;
+  }
+
+  .button-secondary-dark {
+    @apply inline-flex h-12 items-center justify-center rounded-lg border border-white/24 bg-transparent px-5 text-sm font-semibold text-white transition hover:bg-white/10;
+  }
+
+  .contact-item {
+    @apply flex items-start gap-4 rounded-lg border border-white/10 bg-black/14 px-4 py-4;
+  }
+
+  .contact-label {
+    @apply text-xs uppercase tracking-[0.22em] text-[#bdbdbd];
+  }
+
+  .contact-value {
+    @apply mt-1 text-sm font-medium text-white;
+  }
 }
