@@ -7,7 +7,7 @@ import {
   SunMedium,
 } from 'lucide-react'
 
-import heroImage from '../assets/estrutura-metalica-tecnica.png'
+import heroImage from '../assets/dantas-estrutura-solar.png'
 import { company, metrics } from '../data/content'
 
 const technicalCards = [
@@ -34,7 +34,7 @@ export function Hero() {
       <img
         src={heroImage}
         alt="Projeto técnico de um galpão em estrutura metálica"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[72%_center]"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,20,20,0.98)_0%,rgba(31,31,31,0.92)_44%,rgba(32,32,32,0.48)_76%,rgba(32,32,32,0.3)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,20,20,0.18)_0%,rgba(24,24,24,0.76)_100%)]" />

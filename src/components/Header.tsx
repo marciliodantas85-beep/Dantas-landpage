@@ -6,12 +6,12 @@ import { company, navItems } from '../data/content'
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-[rgba(255,255,255,0.94)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3 lg:px-10">
-        <a href="#top" className="block min-w-0">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-10">
+        <a href="#top" className="block min-w-0 shrink-0">
           <img
             src={logoDantas}
             alt={company.name}
-            className="h-14 w-auto max-w-[220px] object-contain sm:h-16 sm:max-w-[300px]"
+            className="h-auto w-[220px] max-w-full object-contain sm:w-[320px] lg:w-[360px]"
           />
         </a>
 
